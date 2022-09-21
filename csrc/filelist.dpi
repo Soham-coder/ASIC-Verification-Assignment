@@ -1,0 +1,10 @@
+DPI_STUB_OBJS_OBJ0=./../simv.daidir/vc_hdrs.o
+DPI_STUB_OBJS_SRC0=./../simv.daidir/vc_hdrs.c
+DPI_STUB_OBJS += $(DPI_STUB_OBJS_OBJ0)
+$(DPI_STUB_OBJS_OBJ0): $(DPI_STUB_OBJS_SRC0)
+	@$(CC) -I/apps/vcsmx/vcs/S-2021.09//include  -pipe -m32 -DVCS    -I/apps/vcsmx/vcs/S-2021.09/include  -fPIC -c -o $(DPI_STUB_OBJS_OBJ0) $(DPI_STUB_OBJS_SRC0)
+	@strip -g $(DPI_STUB_OBJS_OBJ0)
+DPI_WRAPPER_OBJS += uM9F1_0x2aB.o
+uM9F1_0x2aB.o: uM9F1_0x2aB.c
+	$(CC) $(CFLAGS)  -c -o $@ $<
+
